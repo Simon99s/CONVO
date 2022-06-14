@@ -312,6 +312,7 @@ def main(argv):
       train_metrics['train/loss'].update_state(loss)
       train_metrics['train/negative_log_likelihood'].update_state(nll_loss)
       train_metrics['train/accuracy'].update_state(labels, logits)
+      logging.info('train/loss', train_metrics['train/loss'])
 
     return _update_fn
 
